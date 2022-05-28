@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+
+    <link rel="icon" type="image/x-icon" href="img/guemes.jpg" sizes="32x32" />
+
+    <link rel="stylesheet" href="estilocolor.css">
+
+
+
+  </head>
+
+
+<body>
+
+  <div>
+
+    <p>
+   <!-- <p class="dancing animate__animated animate__backInLeft" >  -->  <img src="img/guemes.jpg" alt="imagen de Güemes" title="Sociedad de Fomento 'Gral. Don Martin Miguel de Güemes'" height="100"  width="100"></p></div>
+    
+ <h3> <u> Dejanos tus Datos </u> </h3><br>
+          
+
+
+    <form  id="formulario" >
+        <p>
+          Nombre y Apellido: <input type="text" name="nombre" id="nombre" placeholder="Jose Lopez" class="ingreso" >
+        </p>
+        <p>
+          DNI: <input type="text" name="dni" id="dni" placeholder=" 40526847 Nro sin puntos "class="ingreso">
+        </p>
+
+        <p >
+          Edad: 
+              <input type="text" name="edad" id="edad" size="3" maxlength="2" placeholder="18"class="ingreso"></p>
+
+        <p>
+          E-Mail: <input type="email" name="mail" id="mail" placeholder="joselopez@gmail.com"class="ingreso">
+        </p>
+
+        <input type="radio" name="socio" id="socio" value="Socio" > Socio
+        <input type="radio" name="socio" id="nosocio" value="Nosocio"> No Socio
+        <br><br>
+
+        <tr>
+          <td>Motivo:</td>
+          <td>
+          <select name=interes id="interes"class=ingreso >
+          <option value="Elegir" class="ingreso">Elegir
+          <option value="Comercial" >Asociarse
+          <option value="Clientes">Contacto por Feria
+          <option value="Proveedores">Alquiler de Salones
+          </select>
+          </td>
+       </tr>
+        
+      
+       <p>Detalles: <input type="text" name="detalle" id="detalle" maxlength="100" placeholder="Según motivo" class="ingreso">
+        </p>
+
+        <label for="comentario">Comentario:</label><br>
+        <textarea name="comentario" id="comentario" cols="40" rows="3" placeholder="Si querés dejanos una opinión, todo sirve para mejorar " class="ingreso"></textarea><br><br>
+
+
+       
+        <input  type="submit" value="Enviar" class="button">
+
+             
+        
+      </form> <br>
+
+      <button onclick="location.href='index.html'" class="button">Volver</button>
+
+      <!-- Referencia al CDN de vue  ------------------------------------>
+   <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+      });
+      
+      function validarFormulario(evento) {
+        evento.preventDefault();
+        
+        
+        
+        var usuario = document.getElementById('nombre').value;
+        if(usuario.length == 0) {
+          alert('No has escrito nada en el Nombre');
+          document.getElementById('nombre').value.focus()
+          
+          return;
+        }
+
+        else if (/^([0-9])*$/.test(usuario))
+    {
+        alert("El valor " + usuario + " no corresponde a nombre");
+        document.getElementById("nombre").focus();
+        
+        return ; 
+    }  
+
+     // No me funciona validar sin Numeros en el nombre    
+
+
+    else 
+        for (var i=0; i<document.getElementById('nombre').length; i++)
+        {
+    //Escogemos los que son de tipo "text" y los que están vacíos...
+    if (document.getElementById('nombre').type == "text" && document.getElementById('nombre')[i].value.trim()=="")
+    {
+      alert("tiene numeros");
+      return;
+    }
+    }
+    
+    
+        
+
+
+        var dni = document.getElementById('dni').value;
+        if (dni< 3000000) {
+          alert('DNI no valido, debe ser mayor de 3.000.000');
+          document.getElementById("dni").focus();
+          
+                   
+          return;
+
+
+        } 
+        else {
+                if (dni > 99999999 || isNaN(dni)){
+                    alert("DNI no Valido. Número inexistente ó contiene Letras")
+                    document.getElementById('dni').value.focus()
+                    return 0;
+                }
+            } 
+          
+            
+           
+            var edad = document.getElementById('edad').value;
+               
+            
+            if (edad < 18) {
+                  alert('Debe ser mayor de 18 años');
+                  return ;
+                } else { 
+                  if (isNaN(edad)) {
+                  alert('Ingreso no Válido, Debe ser valor Numerico');
+                  return;
+                }
+              }
+         
+         
+         
+              var mail = document.getElementById('mail').value;
+              if(mail.length == 0) {
+                alert('No completaste el Mail');
+                return;
+              }
+                  
+         
+         
+              var sexo= document.getElementById('socio').value;
+            if (formulario.socio[0].checked == false &&
+                formulario.socio[1].checked == false){
+              //Si al menos uno de los Radio no está marcado....
+                alert("Completa el campo Socio / No Socio");
+                return;
+            }
+
+         
+         
+         
+         
+         
+              var interes = document.getElementById('interes').value;
+              if(interes=="Elegir") {
+      		alert("Debe seleccionar un motivo de su contacto.")
+      	
+      		return  ;
+              }  
+
+          
+          var detalle = document.getElementById('detalle').value;
+               if(detalle.length== 0) {
+      	        	alert("Indicar detalles del motivo seleccionado ")
+      	
+      	    	return  ;
+              }  
+
+
+           
+         
+               
+        
+
+
+        this.submit();
+        alert('Enviado, nos comunicaremos a la brevedad');
+        return;
+      }
+
+    </script> 
+
+    
+      
+
+</body>
+</html>

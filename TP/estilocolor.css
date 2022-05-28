@@ -1,0 +1,427 @@
+.rojo {
+    color: red;
+   }
+   .verde {
+    color: green;
+   }
+
+ .azul {
+
+    color: blue;
+
+
+}
+
+.fuego {
+
+    color: rgb(250, 94, 4)
+}
+
+.body    /* no puedo usarlo me hace todo opaco*/
+{
+    background-image: url("img/fotofrente.jpg"); opacity: 1;
+    
+    
+}
+
+.grid-container {
+    display: grid;                           /*Convierte el contenedor en una grilla */
+    /*display: inline-grid; */        
+    grid-template-columns: auto auto 30%;   /*Forma en que se distribuyen los elementos*/
+    gap: 10px;                               /*Espacios entre los hijos*/
+    background-color: rgb(14, 223, 219);           /*Color de fondo del contenedor */
+    padding: 10px;                           /*Coloco un espacio alrededor del conjunto de hijos*/
+    border: 2px solid rgb(7, 55, 144);           /*El borde no se ve */
+    border-radius: 15px;
+}
+
+.grid-item {
+    background-color: white;  /*rgb(246, 255, 0);  /* Color de fondo de los hijos */
+    color:black;               /* Color del texto de los hijos */
+    padding:10px 1px 10px;
+    border: 2px solid black;   /* Borde de los elementos hijos */
+    border-radius: 15px;
+    text-align: center;          /* Contenido de los hijos centrado en x */
+    
+
+    
+}
+
+.item1 {
+    background-color: rgb(169, 222, 215);   /* Color de fondo del hijo */
+    grid-column-start: 1;        /* Comienza en la col 1 */
+    grid-column-end: 4;          /* Finaliza en la col 4 */
+    
+}
+
+
+
+.itemarea {
+    
+    
+    /*background-color: white;   /* Color de fondo del hijo  */
+    grid-column-start: 3;        /* Comienza en la col 3   */            
+    grid-column-end: 4;          /* Finaliza en la col 4   */
+    grid-row-start: 2;           /* Comienza en la fila 2 */
+    grid-row-end: 6;             /* Finaliza en la fila 6 */
+   
+    
+}
+
+.sofi 
+    {
+    font-family: 'sofia', cursive;
+
+    }
+
+
+
+.dancing 
+    {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+
+    }  
+
+
+
+nav a:hover  {  /*Solo afecta a los <a> que estan en el nav */
+    background-color: rgb(98, 78, 250);
+    color: aliceblue;
+    
+            }  
+
+
+
+ h3 {
+
+  text-decoration: underline;  
+ }     
+ 
+ 
+ .h2 {
+
+    font-size: large;
+
+ }
+
+
+ .sticky {
+    position: fixed;
+    top: 0;
+    width: 98%;
+    height: 42px;
+    padding: 5px;
+    background-color: rgb(212, 224, 233);
+    border: 3px solid #428dcf;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.span {
+
+    font-size:35px; 
+    background-color: rgb(41, 92, 221);
+    text-align: center; color:aliceblue; 
+    border-radius: 15px
+    
+
+}
+
+span.c               /*me contiene las tres cajas*/
+    {
+    display:inline-block;
+    width: 60%;
+    height: 350px;
+    /*border: 1px solid; */  /*es pra probar la ubicacion interna*/
+
+    }
+
+    .z  /*nombre generico de la etiqueta, lo toman distintas instrucciones*/
+    {       
+    
+    display:block;
+    width: 80%;
+    height: 80px;
+    padding: 5px;
+    margin-top: 10px ;
+    margin-left: 60px;  
+    border: 3px solid rgb(113, 89, 187);
+    background-color: rgb(84, 180, 167);
+    border-radius: 15px;
+    /*font-family: 'sofia',cursive;*/
+    /*font-family: 'Open Sans Condensed', sans-serif;*/
+    /*font-family: 'Libre Baskerville', serif;*/
+    font-family: 'Dancing Script', cursive;     /*no me escribe en CURSIVA CAMBIA SI CAMBIA LA LETRA*/
+    font-size: 25px;
+
+    }
+
+
+
+    aside.salon   /*la etiqueta la toma con nombre o sin nombre*/
+    {
+    
+    width: 20%;
+    padding: 10px;
+    margin-left: 10px ;
+    margin-right: 40px;
+    float: right;
+    font-style: italic;
+    background-color: rgb(188, 241, 233); 
+    /*font-family: arial, Georgia, 'Times New Roman', Times, serif;*/
+    /*font-family: 'Sofia', cursive;*/
+    font-family: 'Open Sans Condensed', sans-serif;
+    border-radius: 15px ;
+
+    }
+
+
+
+
+.button
+    {
+    
+    background-color:rgb(225, 224, 232);
+    color:rgb(17, 17, 16);
+    border-radius:10px;
+    border-color: #428dcf;
+    font-size:15px
+    }    
+    
+
+.ingreso
+    {
+        background-color:rgb(233, 238, 71);
+        color:rgb(17, 17, 16);
+        border-radius:5px;
+        
+        font-size:18px
+
+
+    }
+
+
+           
+
+/* .sticky      NO RECONOCE POSITION STICKY  SOLO ME DEJA PONERLO FIXED Y LO SACA DEL ORDEN QUE TIENE Q ES DEBAJO DEL LOGO Y LO FIJA ARRIBA Y ME TAPABA LA FECHA , LA CUAL TUVE QUE CORRER, PORQUE SI LA PONIA EN EL NAV ME LA PEGABA AL ULTIMO ELEMETO Y QUEDABA FEO
+
+
+{
+    position: sticky;
+    top: 0;
+    /*Probar con otros bordes y ver que ocurre! 
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+}  */
+
+
+/*--------- 2 MEDIA QUERIES    600 Y 800----------*/
+
+
+
+@media only screen and (max-width:800px)     /*para pantallas hasta 800px*/
+  {
+
+    
+
+    * {
+       font-size: small;
+    }  
+
+
+    .span {
+       
+        font-size:25px; 
+        background-color: rgb(41, 92, 221);
+        text-align: center; color:aliceblue; 
+        border-radius: 5px;
+        
+        }
+
+    .h2 {
+
+            font-size:medium ;
+
+            }
+                    
+   
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    height: auto;
+    padding: 5px;
+    background-color: rgb(212, 224, 233);
+    border: 3px solid #428dcf;
+    margin-top: 5px;
+    border-radius: 10px; 
+    
+    }
+
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 20% 20% 25% 25%;
+        grid-template-rows: auto auto auto auto;
+                      
+        padding: 10px ;
+        gap: 2vw;
+    }
+
+    .grid-item {
+
+    
+     margin: 1px;
+
+    }
+
+    .item1 {
+
+        grid-column-end: 5;
+    }
+
+    .itemarea {
+
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 4;
+
+        }
+ 
+        
+
+        .z
+            {
+
+            font-size:medium ;
+            }
+
+ 
+            footer
+    {
+      font-size: x-small;
+    }
+    
+
+    .button
+    {
+    
+    
+    border-radius:10px;
+    font-size: 13px;
+    }        
+
+    .ingreso
+    {
+        
+        
+        font-size:small;
+
+
+    }
+
+    
+
+
+
+}  
+
+
+
+
+
+
+ @media only screen and (max-width: 600px)     /*para pantallas hasta 600px*/
+ 
+ 
+ {
+
+
+    * {
+       font-size: x-small;
+        
+    }
+
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    height: auto;
+    padding: 5px;
+    background-color: rgb(212, 224, 233);
+    border: 3px solid #428dcf;
+    margin-top: 5px;
+    border-radius: 10px; 
+    
+    }
+
+   
+
+
+
+    .span {
+
+       
+        font-size:20px; 
+        background-color: rgb(41, 92, 221);
+        text-align: center; color:aliceblue; 
+        border-radius: 5px;
+        
+        }
+
+    .h2 {
+
+            font-size: x-small;
+
+            }
+
+    .grid-container {
+        display: block;
+        grid-template-columns: auto;
+        padding: 20px 10px ;
+        gap: 2vw;
+    }
+
+    .grid-item {
+
+    margin: 10px;
+
+    }
+
+
+    .itemarea {
+
+        display: none;
+     }
+ 
+     footer
+    {
+      font-size: xx-small;
+    }
+    
+ 
+    .button
+    {
+    
+   
+    border-radius:10px;
+    font-size: 10px;
+    }        
+
+    .ingreso
+    {
+        
+        
+        font-size:x-small;
+
+
+    }
+
+
+
+    }
+
+   
+
